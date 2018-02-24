@@ -1,0 +1,78 @@
+angular 4 baiscs
+https://coursetro.com/courses/12/Learn-Angular-4-from-Scratch
+https://www.youtube.com/watch?v=htPYk6QxacQ
+routing and navigation
+https://www.youtube.com/watch?v=tUCa3JcFILI
+
+we can add external files into .angular-cli.json file in styles array
+
+for example u want to add bootstrap or angular material
+
+ npm install --save bootstrap
+
+ npm install angular-material --save
+
+ then add this css file like 
+
+"styles": [
+    "../node_modules/angular-material/angular-material.min.css",
+    "styles.css"
+],
+
+all material info
+https://material.angular.io/guide/getting-started
+
+
+bootstrap: [AppComponent] in module.js will tell which component should load on page load from index.js
+
+declarations : [AppComponent, serverComponent] will use for import all user defined components
+imports : [BrowserModule] will use for import all pre defined modules
+
+
+
+ng generate component server 
+
+or
+
+ng g c server to create a new component
+
+if u want skip importing ng generate component server --skip-import
+
+
+directives
+*ngIf *ngFor ngStyle ngClass
+*ngIf=""
+*ngFor="let server in servers"
+[ngStyle]="{backgroundColor: getBackground()}"
+[ngClass]="{online: status=='online', offline: status==='offline'}"
+
+events
+(input) = "onUpdateChange($event)" - we can achive one way binding
+(click) = "onChange()"
+
+binding
+([ngModel]) = "serverName"
+
+
+template : "<server></server><server></server>"
+templateUrl: "server.html"
+
+selector : "app-server" //element <app-server></app-server>
+[app-server]  //attribute app-server
+".app-server" //class class="app-server"
+
+styleUrls: ['server1.csss, server2.css'];
+styles: ['h1: {
+    color: red;
+},
+h2 {
+    color: green;
+}']
+
+
+
+Augury is google extension will help in visualize the application,use can easy to debug using this tool
+
+
+for validations
+https://stackblitz.com/angular/ldydxydjqrg?file=src%2Fapp%2Fshared%2Fforbidden-name.directive.ts
