@@ -1,0 +1,8 @@
+.recipe-avatar-image {
+    background-size: cover;
+    background-position: center;
+}
+.recipies-list mat-card:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}

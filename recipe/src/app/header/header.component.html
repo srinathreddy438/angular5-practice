@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <mat-toolbar color="primary">
+      <span><a routerLink="">Home</a></span>
+    
+      <!-- This fills the remaining space of the current row -->
+      <span class="example-fill-remaining-space"></span>
+    
+      <mat-menu #appMenu="matMenu" yPosition="above">
+          <button mat-menu-item> <a routerLink="settings"> Settings </a></button>
+          <button mat-menu-item> <a routerLink="help"> Help </a></button>
+        </mat-menu>
+        
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+    </mat-toolbar>
+</mat-toolbar>

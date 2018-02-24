@@ -1,0 +1,12 @@
+<p>
+  server works!
+</p>
+<button mat-raised-button color="accent" [disabled]="disableBtn">Click me!</button>
+<!-- [disabled] in this [] wil indicate value will change dynamically -->
+<div [innerText]="disableBtn"></div>
+<!-- [innerText] will be use for put some code in that element -->
+
+<div>attribute directive ng style</div>
+<div [ngStyle]="{backgroundColor: getBackground()}">server status {{serverOnlineStatus}}</div>
+<div>attribute directive ng class</div>
+<div [ngClass]="{online: serverOnlineStatus === 'Online', offline: serverOnlineStatus === 'Offline'}">server status {{serverOnlineStatus}}</div>

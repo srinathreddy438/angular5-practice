@@ -1,0 +1,9 @@
+app-recipe-list, app-recipe-detail {
+    width: 400px;
+}
+app-recipe-list {
+    float: left;
+}
+app-recipe-detail {
+    float: right;
+}

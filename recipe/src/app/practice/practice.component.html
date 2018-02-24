@@ -1,0 +1,31 @@
+
+routerLink is a directive will download only new page content without initiate complete app everytime.
+this a part of router module.
+<h1>
+    Welcome to {{ title }}!
+</h1>
+
+<!-- <input type="text" [(ngModel)]="name" />
+ -->
+<mat-form-field>
+  <input matInput placeholder="Input">
+</mat-form-field>
+
+<i class="material-icons orange600">face</i>
+
+<mat-checkbox>Check me!</mat-checkbox>
+
+<mat-radio-group>
+  <mat-radio-button value="1">Option 1</mat-radio-button>
+  <mat-radio-button value="2">Option 2</mat-radio-button>
+</mat-radio-group>
+
+
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+
+<app-servers></app-servers>

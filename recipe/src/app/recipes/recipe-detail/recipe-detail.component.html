@@ -1,0 +1,19 @@
+<div class="recipies-list">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar [ngStyle]="{'background-image': 'url(' + recipe.image + ')'}" class="recipe-avatar-image"></div>
+      <mat-card-title>{{recipe.title | uppercase}}</mat-card-title>
+      <mat-card-subtitle>{{recipe.subTitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{recipe.image}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        {{recipe.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

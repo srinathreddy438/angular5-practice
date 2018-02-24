@@ -1,0 +1,7 @@
+<h1>Recipes Info</h1>
+<app-recipe-create (recipeCreated)="onRecipeAdded($event)"></app-recipe-create>
+<h3>Recipe View</h3>
+<div>
+  <app-recipe-list [recipes]="arr"></app-recipe-list>
+  <app-recipe-detail></app-recipe-detail>
+</div>

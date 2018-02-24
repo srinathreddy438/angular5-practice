@@ -1,0 +1,39 @@
+<h1>i am list of servers</h1>
+
+<h2>here is the list</h2>
+ 
+<!-- <app-server></app-server>
+<app-server></app-server>
+<app-server></app-server> -->
+
+<div>using ng for directive without repeating</div>
+<app-server *ngFor="let server of servers"></app-server>
+<!-- <div app-server-as-attribute1></div> -->
+<!-- <div class="app-server-as-a-class"></div> -->
+
+<div>click functionality</div>
+<button mat-raised-button color="primary" (click)="onChangeText()">Click me!</button>
+{{changeText}}
+
+<!-- 1 way data binding -->
+<div>1 way data binding</div>
+<input type="text" (input)="onUpdateText($event)" />
+this value won't update in text box when model changes anywhere outside
+this will change 2nd input value but, 2nd input value won't be update on 1st input value. 
+<!-- 2 way data binding -->
+<div>2 way data binding</div>
+<input type="text" [(ngModel)]="changeText" />
+
+
+<div>structural directive ng if else</div>
+
+<div>if else condition</div>
+<div *ngIf="serverStatus; else noServer">Server created</div>
+<ng-template #noServer>
+    <div>No Server found</div>
+</ng-template>
+<div>*ngIf here * will indicate it's a structural directive, it will change the DOM</div>
+<div>structural directive will add / remove elements in DOM</div>
+
+
+
