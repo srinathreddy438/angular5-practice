@@ -12,7 +12,13 @@ export class RecipesComponent implements OnInit {
   ngOnInit() {
   }
 
-  arr = [];
+  //1item pre defined in the array just for display purpose
+  arr = [{
+    title: "Recipe1",
+    subTitle: "Andhra Special",
+    description: "A recipe is a set of instructions that describes how to prepare or make something, especially a culinary dish. It is also used in medicine or in information technology",
+    image: "http://images.media-allrecipes.com/userphotos/720x405/3846491.jpg"
+  }];
   //onRecipeAdded (serverData: {recipeName: string, recipeSubtitle: string, recipeContent: string}) {
     onRecipeAdded (data) {
      console.log(data);

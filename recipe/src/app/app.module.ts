@@ -55,6 +55,15 @@ import { SqrtPipe } from './pipes/app.sqrt';
         component: HomeComponent 
       },
       { 
+        path: 'home', 
+        component: HomeComponent 
+      },
+      {
+        path: 'recipe', 
+        redirectTo: '/home', 
+        pathMatch: 'full' 
+      },
+      { 
         path: 'settings', 
         component: SettingsComponent 
       },
