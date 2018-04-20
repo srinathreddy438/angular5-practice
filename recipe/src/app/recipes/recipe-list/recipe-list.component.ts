@@ -23,11 +23,12 @@ export class RecipeListComponent implements OnInit {
       image: "https://dish-environment-prod-contentbucket-10u8bszryovz3.s3.amazonaws.com/assets/s3fs-public/styles/content_image_x_large/public/2043291_-Slow-Cooker-Vegetarian-Minestrone-Photo-by-Karolina.jpg?itok=NmjOOxNW"
     }
   ];*/
+  @Input() recipes;
   // load data from model
-  @Input() recipes : Recipe[] = [
-    new Recipe("Recipe1", "Andhra Special", "A recipe is a set of instructions that describes how to prepare or make something, especially a culinary dish. It is also used in medicine or in information technology", "http://images.media-allrecipes.com/userphotos/720x405/3846491.jpg"),
-    new Recipe("Recipe2", "Andhra Special", "A recipe is a set of instructions that describes how to prepare or make something, especially a culinary dish. It is also used in medicine or in information technology", "https://dish-environment-prod-contentbucket-10u8bszryovz3.s3.amazonaws.com/assets/s3fs-public/styles/content_image_x_large/public/2043291_-Slow-Cooker-Vegetarian-Minestrone-Photo-by-Karolina.jpg?itok=NmjOOxNW")    
-  ];
+  //@Input() recipes : Recipe[] = [
+    //new Recipe("Recipe1", "Andhra Special", "A recipe is a set of instructions that describes how to prepare or make something, especially a culinary dish. It is also used in medicine or in information technology", "http://images.media-allrecipes.com/userphotos/720x405/3846491.jpg"),
+    //new Recipe("Recipe2", "Andhra Special", "A recipe is a set of instructions that describes how to prepare or make something, especially a culinary dish. It is also used in medicine or in information technology", "https://dish-environment-prod-contentbucket-10u8bszryovz3.s3.amazonaws.com/assets/s3fs-public/styles/content_image_x_large/public/2043291_-Slow-Cooker-Vegetarian-Minestrone-Photo-by-Karolina.jpg?itok=NmjOOxNW")    
+  //];
 
   constructor() { }
 

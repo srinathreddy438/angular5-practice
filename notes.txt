@@ -4,6 +4,13 @@ https://www.youtube.com/watch?v=htPYk6QxacQ
 routing and navigation
 https://www.youtube.com/watch?v=tUCa3JcFILI
 
+setup
+_____
+npm install -g @angular/cli
+ng new my-first-project
+cd my-first-project
+ng serve
+
 we can add external files into .angular-cli.json file in styles array
 
 for example u want to add bootstrap or angular material
@@ -76,3 +83,13 @@ Augury is google extension will help in visualize the application,use can easy t
 
 for validations
 https://stackblitz.com/angular/ldydxydjqrg?file=src%2Fapp%2Fshared%2Fforbidden-name.directive.ts
+
+
+
+https://code.tutsplus.com/tutorials/how-to-build-an-angular-2-service--cms-27943
+
+
+angular service
+_______________
+ng generate service service/user
+simple service example http://adventure-us.guide/angular-5-building-simple-service/

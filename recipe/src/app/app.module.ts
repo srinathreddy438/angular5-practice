@@ -22,6 +22,9 @@ import { RecipeCreateComponent } from './recipes/recipe-Create/recipe-Create.com
 //custom pipes
 import { SqrtPipe } from './pipes/app.sqrt';
 
+//services
+import { RecipeService } from './service/recipe.service';
+
 
 @NgModule({
   declarations: [
@@ -77,7 +80,7 @@ import { SqrtPipe } from './pipes/app.sqrt';
       }
     ])
   ],
-  providers: [],
+  providers: [RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
