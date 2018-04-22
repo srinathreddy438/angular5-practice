@@ -1,0 +1,10 @@
+.showHideMe {
+    display: none;
+}
+.card-outline-primary {
+    border: 5px solid blue;
+}
+
+.check-encapsulation {
+    background-color: red;
+}

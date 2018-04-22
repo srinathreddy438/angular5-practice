@@ -22,6 +22,9 @@ import { RecipeCreateComponent } from './recipes/recipe-Create/recipe-Create.com
 //custom pipes
 import { SqrtPipe } from './pipes/app.sqrt';
 
+//custom directives
+import { HighlightDirective } from './directives/my-highlight-directive';
+
 //services
 import { RecipeService } from './service/recipe.service';
 
@@ -41,7 +44,8 @@ import { RecipeService } from './service/recipe.service';
     RecipeDetailComponent,
     RecipeListComponent,
     RecipeCreateComponent,
-    SqrtPipe
+    SqrtPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
