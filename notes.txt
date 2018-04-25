@@ -93,3 +93,8 @@ angular service
 _______________
 ng generate service service/user
 simple service example http://adventure-us.guide/angular-5-building-simple-service/
+
+directives
+__________
+@HostListener decorator - will useful for listen user events like click, mouse over, mouse out ... events on directive
+@HostBinding decorator - will useful for bind some property to host element based on flag
