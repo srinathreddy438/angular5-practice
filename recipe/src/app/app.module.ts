@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { RouterModule } from '@angular/router';
@@ -18,6 +18,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { RecipeCreateComponent } from './recipes/recipe-Create/recipe-Create.component';
+import { ProgressiveFormComponent } from './progressive-form/progressive-form.component';
 
 //custom pipes
 import { SqrtPipe } from './pipes/app.sqrt';
@@ -44,12 +45,14 @@ import { RecipeService } from './service/recipe.service';
     RecipeDetailComponent,
     RecipeListComponent,
     RecipeCreateComponent,
+    ProgressiveFormComponent,
     SqrtPipe,
     HighlightDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
     RouterModule.forRoot([
@@ -77,6 +80,10 @@ import { RecipeService } from './service/recipe.service';
       { 
         path: 'help', 
         component: HelpComponent 
+      },
+      { 
+        path: 'progressive-form', 
+        component: ProgressiveFormComponent 
       },
       {
         path: '**',
