@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-
+import 'rxjs/Rx';
 @Component({
   selector: 'app-progressive-form',
   templateUrl: './progressive-form.component.html',
@@ -18,16 +18,30 @@ export class ProgressiveFormComponent implements OnInit {
     {value: 'english-1', viewValue: 'English'},
     {value: 'hindi-2', viewValue: 'Hindi'}
   ];
+
+
+  //reactive form
+  searchField: FormControl;
+  searches: string[] = [];
   constructor() { }
 
   ngOnInit() {
     this.createFormControls();
     this.createForm();
+
+    //reactive form
+    this.searchField = new FormControl();
+    this.searchField.valueChanges
+      .debounceTime(400)
+      .distinctUntilChanged()
+      .subscribe((term) => {
+      this.searches.push(term);
+    })
   }
 
   createFormControls() {
     this.firstName = new FormControl('', Validators.required);
-    this.lastName = new FormControl('', Validators.minLength(3));
+    this.lastName = new FormControl('', [Validators.required, Validators.minLength(3)]);
     this.comment = new FormControl();
     this.language = new FormControl();
   }
@@ -40,6 +54,13 @@ export class ProgressiveFormComponent implements OnInit {
       comment: this.comment,
       language: this.language
     }); 
+  }
+
+  onSubmit() {
+    if (this.myform.valid) {
+      console.log("Form Submitted!");
+      this.myform.reset();
+    }
   }
 
 }

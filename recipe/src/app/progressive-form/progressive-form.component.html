@@ -1,5 +1,5 @@
 <!-- u can refer https://codecraft.tv/courses/angular/forms/model-driven-validation/ -->
-<form class="progress-create-form" novalidate [formGroup]="myform">
+<form class="progress-create-form" (ngSubmit)="onSubmit()" novalidate [formGroup]="myform">
 
   <div formGroupName="name">
     <mat-form-field class="progress-form-field-full-width">
@@ -20,7 +20,7 @@
   </mat-form-field>
 
   <pre>{{myform.value | json}}</pre>
-  <button mat-raised-button color="accent">Click me!</button>
+  <button type="submit" mat-raised-button color="accent">Click me!</button>
 
   <!-- <div>
     <pre>dirty - {{ myform.controls.name.dirty }}</pre>
@@ -32,3 +32,15 @@
   </div> -->
 
 </form>
+
+
+<div>Reactive Form</div>
+<!--
+  formControlName directive will use within form, if it is single field we can use [formField]="searchField"
+-->
+<input type="search" [formControl]='searchField' />
+<ul>
+  <li *ngFor ="let search of searches">
+    {{search}}
+  </li>
+</ul>
