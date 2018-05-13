@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ServersComponent } from './servers/servers.component';
@@ -19,6 +20,8 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { RecipeCreateComponent } from './recipes/recipe-Create/recipe-Create.component';
 import { ProgressiveFormComponent } from './progressive-form/progressive-form.component';
+import { ApiInfoComponent } from './api-info/api-info.component';
+
 
 //custom pipes
 import { SqrtPipe } from './pipes/app.sqrt';
@@ -32,6 +35,11 @@ import { RecipeService } from './service/recipe.service';
 
 @NgModule({
   declarations: [
+    //pipes
+    SqrtPipe,
+    //custom directives
+    HighlightDirective,
+    //components
     AppComponent,
     ServersComponent,
     ServerComponent,
@@ -46,8 +54,7 @@ import { RecipeService } from './service/recipe.service';
     RecipeListComponent,
     RecipeCreateComponent,
     ProgressiveFormComponent,
-    SqrtPipe,
-    HighlightDirective
+    ApiInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +62,7 @@ import { RecipeService } from './service/recipe.service';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpModule,
     RouterModule.forRoot([
       { 
         path: 'practice', 
@@ -84,6 +92,10 @@ import { RecipeService } from './service/recipe.service';
       { 
         path: 'progressive-form', 
         component: ProgressiveFormComponent 
+      },
+      { 
+        path: 'api-info', 
+        component: ApiInfoComponent 
       },
       {
         path: '**',

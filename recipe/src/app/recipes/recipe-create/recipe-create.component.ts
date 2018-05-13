@@ -1,5 +1,5 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-
+import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/core';
+/* we can get a ngForm reference using ViewChild decorator */
 @Component({
   selector: 'app-recipe-create',
   templateUrl: './recipe-create.component.html',
@@ -12,12 +12,26 @@ export class RecipeCreateComponent implements OnInit {
   newRecipeSubtitle = '';
   newRecipeContent = '';
 
+  @ViewChild('f') form: any;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  onAddRecipe (f) {
+  onAddRecipe () {
+    if(this.form.invalid) {
+      return;
+    }
+    //f.form.value will give form object we can emit it
+    this.recipeCreated.emit({
+      title : this.newRecipeName,
+      subTitle: this.newRecipeSubtitle,
+      description : this.newRecipeContent
+    });
+    this.form.reset(); // f.reset();
+  }
+  /*onAddRecipe (f) {
     if(f.invalid) {
       return;
     }
@@ -28,5 +42,5 @@ export class RecipeCreateComponent implements OnInit {
       description : this.newRecipeContent
     });
     f.resetForm(); // f.reset();
-  }
+  }*/
 }
