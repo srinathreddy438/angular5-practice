@@ -29,7 +29,7 @@ export class RecipeCreateComponent implements OnInit {
       subTitle: this.newRecipeSubtitle,
       description : this.newRecipeContent
     });
-    this.form.reset(); // f.reset();
+    this.form.resetForm(); // f.reset();
   }
   /*onAddRecipe (f) {
     if(f.invalid) {

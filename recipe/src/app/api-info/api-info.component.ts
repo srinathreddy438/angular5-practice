@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response, RequestOptions, Headers, URLSearchParams } from '@angular/http';
+import { SearchService } from '../service/search.service';
 
 @Component({
   selector: 'app-api-info',
@@ -8,8 +9,8 @@ import { Http, Response, RequestOptions, Headers, URLSearchParams } from '@angul
 })
 export class ApiInfoComponent implements OnInit {
   apiRoot: string = "http://httpbin.org";
-  constructor(private http: Http) { }
-
+  constructor(private http: Http, private searchServe: SearchService) { }
+  
   doGET() {
     console.log("GET");
     let url = `${this.apiRoot}/get`; //in es6 we can concat like this. `${}` will indicate it is a variable
@@ -47,7 +48,20 @@ export class ApiInfoComponent implements OnInit {
       );
   }
 
+ 
   ngOnInit() {
+    //test service
+    //console.log(this.searchServe.testName('abcdef'));
+    //console.log(this.searchServe.name);
+  }
+
+  private loading;
+  private data;
+  doSearch(searchTerm) {
+    this.loading = true;
+    this.searchServe.doSearchList(searchTerm).then((res) => {this.loading = false, this.data = res; console.log("res:"+res)});
+    console.log("from ts file");
+    
   }
 
 }

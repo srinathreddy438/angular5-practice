@@ -1,2 +1,30 @@
 <button class="btn btn-primary" (click)="doGET()">GET with observable</button>
 <button class="btn btn-primary" (click)="doGETAsPromise()">GET with promise</button>
+
+<h1>Call Search API from Searvice</h1>
+<form>
+    <input type="text" #search />
+    <button class="btn btn-primary" (click)="doSearch(search.value)">Search</button>
+</form>
+
+<div class="text-center">
+    <p class="lead" *ngIf="loading">Loading...</p>
+</div>
+<!-- <h1>data From Service</h1> -->
+<!-- <ul>
+    <li *ngFor="let search of searchServe.results">
+        <div>{{search.artistName}}</div>
+        <div>{{search.country}}</div>
+        <div>{{search.collectionName}}</div>
+    </li>
+</ul> -->
+
+<!-- <h1>data From ts file</h1> -->
+<ul>
+    <li *ngFor="let search of data">
+        <div>{{search.artistName}}</div>
+        <div>{{search.country}}</div>
+        <div>{{search.collectionName}}</div>
+    </li>
+</ul>
+

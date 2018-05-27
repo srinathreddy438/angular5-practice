@@ -31,6 +31,7 @@ import { HighlightDirective } from './directives/my-highlight-directive';
 
 //services
 import { RecipeService } from './service/recipe.service';
+import { SearchService } from './service/search.service';
 
 
 @NgModule({
@@ -103,7 +104,10 @@ import { RecipeService } from './service/recipe.service';
       }
     ])
   ],
-  providers: [RecipeService],
+  providers: [
+    RecipeService, 
+    SearchService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

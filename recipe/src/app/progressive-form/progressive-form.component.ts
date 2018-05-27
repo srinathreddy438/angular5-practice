@@ -40,7 +40,7 @@ export class ProgressiveFormComponent implements OnInit {
   }
 
   createFormControls() {
-    this.firstName = new FormControl('', Validators.required);
+    this.firstName = new FormControl('sri', Validators.required);
     this.lastName = new FormControl('', [Validators.required, Validators.minLength(3)]);
     this.comment = new FormControl();
     this.language = new FormControl();
