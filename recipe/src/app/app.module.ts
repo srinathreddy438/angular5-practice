@@ -21,6 +21,15 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { RecipeCreateComponent } from './recipes/recipe-Create/recipe-Create.component';
 import { ProgressiveFormComponent } from './progressive-form/progressive-form.component';
 import { ApiInfoComponent } from './api-info/api-info.component';
+import { TestRoutingComponent } from './test-routing/test-routing.component';
+//search artist list
+import { SearchComponent } from './search/search.component';
+//particular artist details
+import { ArtistComponent } from './artist/artist.component';
+//particular artist track list
+import { ArtistTrackListComponent } from './artist/artist-track-list/artist-track-list.component';
+//particular artist album list
+import { ArtistAlbumListComponent } from './artist/artist-album-list/artist-album-list.component';
 
 
 //custom pipes
@@ -32,6 +41,12 @@ import { HighlightDirective } from './directives/my-highlight-directive';
 //services
 import { RecipeService } from './service/recipe.service';
 import { SearchService } from './service/search.service';
+import { UserService } from './service/user.service';
+//guard services
+import { AlwaysAuthGuard } from './guards/always-auth-guard';
+import { OnlyLoggedInUsersGuard } from './guards/only-logged-in-users-guard';
+import { AlwaysAuthChildrenGuard } from './guards/always-auth-children-guard';
+
 
 
 @NgModule({
@@ -55,7 +70,13 @@ import { SearchService } from './service/search.service';
     RecipeListComponent,
     RecipeCreateComponent,
     ProgressiveFormComponent,
-    ApiInfoComponent
+    ApiInfoComponent,
+    TestRoutingComponent,
+    SearchComponent,
+    ArtistComponent,
+    ArtistTrackListComponent,
+    ArtistAlbumListComponent
+
   ],
   imports: [
     BrowserModule,
@@ -98,6 +119,25 @@ import { SearchService } from './service/search.service';
         path: 'api-info', 
         component: ApiInfoComponent 
       },
+      { 
+        path: 'test-routing', 
+        component: TestRoutingComponent 
+      },
+      {
+        path: 'artist',
+        component: SearchComponent
+      },
+      {
+        path: 'artist/:artistId',
+        component: ArtistComponent,
+        canActivate: [AlwaysAuthGuard, OnlyLoggedInUsersGuard],
+        canActivateChild: [AlwaysAuthChildrenGuard],
+        children: [
+          //{path: '', redirectTo: 'tracks', pathMatch: 'full'}, 
+          {path: 'tracks', component: ArtistTrackListComponent}, 
+          {path: 'albums', component: ArtistAlbumListComponent}
+        ]
+      },
       {
         path: '**',
         component: NotFoundComponent
@@ -106,7 +146,11 @@ import { SearchService } from './service/search.service';
   ],
   providers: [
     RecipeService, 
-    SearchService
+    SearchService,
+    UserService,
+    AlwaysAuthGuard,
+    OnlyLoggedInUsersGuard,
+    AlwaysAuthChildrenGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,19 @@
+<form>
+  <input type="text" #search />
+  <button class="btn btn-primary" (click)="doSearch(search.value)">Search artist</button>
+</form>
+
+<div class="text-center">
+  <p class="lead" *ngIf="loading">Loading...</p>
+</div>
+
+<mat-card *ngFor="let search of data">
+  <mat-card-header>
+    <a mat-card-avatar [routerLink]="['/artist', search.artistId]">
+      <div mat-card-avatar [ngStyle]="{'background-image': 'url(' + search.artworkUrl100 + ')'}">
+      </div>
+    </a>
+    <mat-card-title>{{search.artistName}}</mat-card-title>
+    <mat-card-subtitle>{{search.country}}</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>

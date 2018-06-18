@@ -1,0 +1,16 @@
+<h2>Artist Track List</h2>
+<mat-card *ngFor="let track of artistTrackList">
+  <mat-card-header>
+    <mat-card-title>Artist Name: {{track.artistName}}</mat-card-title>
+    <mat-card-subtitle>Artist Id: {{track.artistId}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div>Artist link url: {{track.artistLinkUrl}}</div>
+  </mat-card-content>
+</mat-card>
+<div *ngIf="!artistTrackList.length > 0">
+  No Tracks Found
+</div>
+<div *ngIf="loading">
+  ... Loading
+</div>

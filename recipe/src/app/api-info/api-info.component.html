@@ -1,11 +1,14 @@
-<button class="btn btn-primary" (click)="doGET()">GET with observable</button>
+<button class="btn btn-primary" (click)="doGETAsObservable()">GET with observable</button>
 <button class="btn btn-primary" (click)="doGETAsPromise()">GET with promise</button>
 
-<h1>Call Search API from Searvice</h1>
+<h1>Call Search API from Service using promise</h1>
 <form>
     <input type="text" #search />
-    <button class="btn btn-primary" (click)="doSearch(search.value)">Search</button>
+    <button class="btn btn-primary" (click)="doSearchUsingPromise(search.value)">Search using promise</button>
 </form>
+
+<h1>Call Search API from Service using observable</h1>
+<input type="text" [formControl]="searchField" />
 
 <div class="text-center">
     <p class="lead" *ngIf="loading">Loading...</p>
@@ -27,4 +30,3 @@
         <div>{{search.collectionName}}</div>
     </li>
 </ul>
-
