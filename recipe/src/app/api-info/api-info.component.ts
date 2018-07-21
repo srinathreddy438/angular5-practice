@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit } from '@angular/core';
 import { Http, Response, RequestOptions, Headers, URLSearchParams } from '@angular/http';
 import { SearchService } from '../service/search.service';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
+import { forkJoin } from "rxjs/observable/forkJoin";
 
 @Component({
   selector: 'app-api-info',
@@ -11,7 +12,9 @@ import { ReactiveFormsModule, FormControl } from '@angular/forms';
 export class ApiInfoComponent implements OnInit {
   apiRoot: string = "http://httpbin.org";
   private searchField: FormControl;
-  constructor(private http: Http, private searchServe: SearchService) { }
+  constructor(private http: Http, private searchServe: SearchService) {
+    console.log("constructor");
+   }
   
   doGETAsObservable() {
     console.log("GET");
@@ -63,6 +66,7 @@ export class ApiInfoComponent implements OnInit {
 
   
   ngOnInit() {
+    console.log("ngOnInit");
     //test service
     //console.log(this.searchServe.testName('abcdef'));
     //console.log(this.searchServe.name);
@@ -76,5 +80,18 @@ export class ApiInfoComponent implements OnInit {
         .subscribe( value => { 
           this.data = value;
     });
+
+
+    //fork join: call multiple api's at a time
+    let character = this.http.get('https://swapi.co/api/people/1');
+    let characterHomeworld = this.http.get('http://swapi.co/api/planets/1');
+    forkJoin([character, characterHomeworld]).subscribe(results => {
+      console.log("fork join");
+      console.log(results);
+    });
+  }
+
+  ngAfterViewInit() {
+    console.log("ngAfterViewInit");
   }
 }

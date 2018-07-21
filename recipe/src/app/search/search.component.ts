@@ -15,7 +15,11 @@ export class SearchComponent implements OnInit {
     this.loading = true;
     this.searchServe.doSearchList(searchTerm).then((res) => {
       this.loading = false, this.data = res;
-    });
+    },
+    (err) => {
+      console.log(err);
+    }
+  );
   }
   
   constructor( private searchServe: SearchService, private activatedRoute: ActivatedRoute, private router: Router ) {

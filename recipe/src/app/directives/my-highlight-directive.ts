@@ -2,6 +2,7 @@ import { Directive, ElementRef, Input, HostListener, HostBinding } from '@angula
 
 @Directive({ 
     selector: '[myHighlight]'
+    //selector: '.myHighlight'
 })
 export class HighlightDirective {
     constructor(private el: ElementRef) {
