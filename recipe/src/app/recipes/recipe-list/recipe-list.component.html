@@ -1,5 +1,5 @@
 <div class="recipies-list">
-  <mat-card *ngFor="let recipe of recipes">
+  <mat-card *ngFor="let recipe of recipes" (click)="showDetails(recipe)">
     <!-- pipe example {{arr | slice:0:3}} //output 1,2,3-->
     <!-- {{arr | json}} //outputs : [1,2,3,4,5,6,7,8,9,10]; -->
     <!-- <b>Square root of 25 is: {{16 | sqrt}}</b> //custom pipe //ouputs as 4 -->

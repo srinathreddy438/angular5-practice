@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable , EventEmitter} from '@angular/core';
 import { Http, RequestOptions, URLSearchParams } from '@angular/http';
+import { Observable, Observer } from 'rxjs';
 
 @Injectable()
 export class SearchService {
@@ -12,6 +13,11 @@ export class SearchService {
   }
   name = 'srinath';
   */
+ /*updateDate : Observable<any> = new Observable((observer: Observer<any>)=> {
+  observer.next("service init value");
+}) ;*/
+  updateDate = new EventEmitter<any>();
+  setData: string;
   results = [];
   apiUrl: string = 'https://itunes.apple.com/search';
   artistBaseApi: string = 'https://itunes.apple.com/lookup';
@@ -109,4 +115,5 @@ export class SearchService {
     });
     return promise;
   }
+ 
 }

@@ -25,4 +25,5 @@ export class RecipesComponent implements OnInit {
      data.image= "http://images.media-allrecipes.com/userphotos/720x405/3846491.jpg";
     this.arr.push(data);
   }
+
 }

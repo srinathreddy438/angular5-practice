@@ -8,9 +8,11 @@
     <div>Album link url: {{album.artistLinkUrl}}</div>
   </mat-card-content>
 </mat-card>
-<div *ngIf="!artistAlbumList.length > 0">
+<div *ngIf="!artistAlbumList || !artistAlbumList.length">
   No Albums Found
 </div>
 <div *ngIf="loading">
   ... Loading
 </div>
+check observable
+{{checkData}}

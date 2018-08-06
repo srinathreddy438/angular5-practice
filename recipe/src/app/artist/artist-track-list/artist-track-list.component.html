@@ -8,7 +8,7 @@
     <div>Artist link url: {{track.artistLinkUrl}}</div>
   </mat-card-content>
 </mat-card>
-<div *ngIf="!artistTrackList.length > 0">
+<div *ngIf="!artistTrackList || !artistTrackList.length">
   No Tracks Found
 </div>
 <div *ngIf="loading">

@@ -3,8 +3,8 @@ import { AuthService } from '../auth/auth.service';
 @Component({
     "selector": "app-login",
     "template": `<a>
-        <span *ngIf="needsLogin()">Login</span>
-        <span *ngIf="!needsLogin()">Logout</span>
+        <span>Login</span>
+        <span>Logout</span>
     </a>`
 })
 

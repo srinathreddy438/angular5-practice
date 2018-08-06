@@ -9,8 +9,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./artist-track-list.component.css']
 })
 export class ArtistTrackListComponent implements OnInit {
-  private loading; 
-  private artistTrackList;
+  loading; 
+  artistTrackList;
   getArtistTrackDetails(artistId) {
     this.loading = true;
     this.searchServe.artistTrackList(artistId).then(

@@ -11,7 +11,7 @@ import { forkJoin } from "rxjs/observable/forkJoin";
 })
 export class ApiInfoComponent implements OnInit {
   apiRoot: string = "http://httpbin.org";
-  private searchField: FormControl;
+  searchField: FormControl;
   constructor(private http: Http, private searchServe: SearchService) {
     console.log("constructor");
    }
@@ -56,8 +56,8 @@ export class ApiInfoComponent implements OnInit {
  
   
 
-  private loading;
-  private data;
+  loading;
+  data;
   doSearchUsingPromise(searchTerm) {
     this.loading = true;
     this.searchServe.doSearchList(searchTerm).then((res) => {this.loading = false, this.data = res; console.log("res:"+res)});

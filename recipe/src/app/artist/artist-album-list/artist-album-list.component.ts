@@ -9,8 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ArtistAlbumListComponent implements OnInit {
 
-  private loading; 
-  private artistAlbumList;
+  loading; 
+  artistAlbumList;
+  checkData = "intian value";
   getArtistAlbumDetails(artistId) {
     this.loading = true;
     this.searchServe.artistAlbumList(artistId).then(
@@ -28,6 +29,10 @@ export class ArtistAlbumListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.searchServe.updateDate.subscribe((data)=> {
+      console.log(data);
+      this.checkData = data;
+    })
   }
 
 }

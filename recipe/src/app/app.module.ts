@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ServersComponent } from './servers/servers.component';
@@ -22,6 +23,7 @@ import { RecipeCreateComponent } from './recipes/recipe-Create/recipe-Create.com
 import { ProgressiveFormComponent } from './progressive-form/progressive-form.component';
 import { ApiInfoComponent } from './api-info/api-info.component';
 import { TestRoutingComponent } from './test-routing/test-routing.component';
+import { LoginComponent } from './login/login.component';
 //search artist list
 import { SearchComponent } from './search/search.component';
 //particular artist details
@@ -34,6 +36,7 @@ import { ArtistAlbumListComponent } from './artist/artist-album-list/artist-albu
 
 //custom pipes
 import { SqrtPipe } from './pipes/app.sqrt';
+import { DefaultPipe } from './pipes/default-pipe/default.pipe';
 
 //custom directives
 import { HighlightDirective } from './directives/my-highlight-directive';
@@ -46,6 +49,8 @@ import { UserService } from './service/user.service';
 import { AlwaysAuthGuard } from './guards/always-auth-guard';
 import { OnlyLoggedInUsersGuard } from './guards/only-logged-in-users-guard';
 import { AlwaysAuthChildrenGuard } from './guards/always-auth-children-guard';
+//interseptors
+import { MyInterceptor } from './service/interseptor.service';
 
 
 
@@ -53,6 +58,7 @@ import { AlwaysAuthChildrenGuard } from './guards/always-auth-children-guard';
   declarations: [
     //pipes
     SqrtPipe,
+    DefaultPipe,
     //custom directives
     HighlightDirective,
     //components
@@ -75,7 +81,8 @@ import { AlwaysAuthChildrenGuard } from './guards/always-auth-children-guard';
     SearchComponent,
     ArtistComponent,
     ArtistTrackListComponent,
-    ArtistAlbumListComponent
+    ArtistAlbumListComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -150,7 +157,10 @@ import { AlwaysAuthChildrenGuard } from './guards/always-auth-children-guard';
     UserService,
     AlwaysAuthGuard,
     OnlyLoggedInUsersGuard,
-    AlwaysAuthChildrenGuard
+    AlwaysAuthChildrenGuard,
+    //{ provide: APP_INITIALIZER, useFactory: init_app, deps: [AppLoadService], multi: true },
+    //https://www.intertech.com/Blog/angular-4-tutorial-run-code-during-app-initialization/
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

@@ -9,8 +9,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class SearchComponent implements OnInit {
  
-  private loading;
-  private data;
+  loading;
+  data;
   doSearchUsingPromise(searchTerm) {
     this.loading = true;
     this.searchServe.doSearchList(searchTerm).then((res) => {
