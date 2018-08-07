@@ -32,7 +32,8 @@ import { ArtistComponent } from './artist/artist.component';
 import { ArtistTrackListComponent } from './artist/artist-track-list/artist-track-list.component';
 //particular artist album list
 import { ArtistAlbumListComponent } from './artist/artist-album-list/artist-album-list.component';
-
+//view child module
+import { ViewChildModule } from './view-child/view-child.module';
 
 //custom pipes
 import { SqrtPipe } from './pipes/app.sqrt';
@@ -51,6 +52,7 @@ import { OnlyLoggedInUsersGuard } from './guards/only-logged-in-users-guard';
 import { AlwaysAuthChildrenGuard } from './guards/always-auth-children-guard';
 //interseptors
 import { MyInterceptor } from './service/interseptor.service';
+
 
 
 
@@ -92,6 +94,8 @@ import { MyInterceptor } from './service/interseptor.service';
     BrowserAnimationsModule,
     MaterialModule,
     HttpModule,
+    //custom modules
+    ViewChildModule,
     RouterModule.forRoot([
       { 
         path: 'practice', 
@@ -145,6 +149,10 @@ import { MyInterceptor } from './service/interseptor.service';
           {path: 'albums', component: ArtistAlbumListComponent}
         ]
       },
+      /*{
+        path: 'view-child',
+        component: ViewChildModule
+      },*/
       {
         path: '**',
         component: NotFoundComponent
