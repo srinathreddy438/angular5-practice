@@ -4,13 +4,19 @@ import { ViewChildComponent } from './view-child.component'
 //load child components
 import { NumberParentComponent } from './number-parent/number-parent.component';
 import { NumberComponent } from './number-parent/number/number.component';
+import { CpcolorParentComponent } from './cpcolor-parent/cpcolor-parent.component';
+import { CpcolorDirective } from './cpcolor-parent/cpcolor.directive';
+import { CpthemeComponent } from './cptheme/cptheme.component';
 
 
 @NgModule({
     declarations: [
         ViewChildComponent,
         NumberParentComponent,
-        NumberComponent
+        NumberComponent,
+        CpcolorParentComponent,
+        CpcolorDirective,
+        CpthemeComponent
     ],
     imports: [
         RouterModule.forRoot([
