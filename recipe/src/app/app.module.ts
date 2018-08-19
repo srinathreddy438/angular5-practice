@@ -35,6 +35,7 @@ import { ArtistAlbumListComponent } from './artist/artist-album-list/artist-albu
 //view child module
 import { ViewChildModule } from './view-child/view-child.module';
 import { AppLoadModule } from './app-load/app-load.module';
+import { AsyncModule } from './async/async.module';
 
 //custom pipes
 import { SqrtPipe } from './pipes/app.sqrt';
@@ -96,6 +97,7 @@ import { MyInterceptor } from './service/interseptor.service';
     //custom modules
     AppLoadModule,
     ViewChildModule,
+    AsyncModule,
     RouterModule.forRoot([
       { 
         path: 'practice', 
