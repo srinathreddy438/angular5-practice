@@ -34,6 +34,7 @@ import { ArtistTrackListComponent } from './artist/artist-track-list/artist-trac
 import { ArtistAlbumListComponent } from './artist/artist-album-list/artist-album-list.component';
 //view child module
 import { ViewChildModule } from './view-child/view-child.module';
+import { AppLoadModule } from './app-load/app-load.module';
 
 //custom pipes
 import { SqrtPipe } from './pipes/app.sqrt';
@@ -52,8 +53,6 @@ import { OnlyLoggedInUsersGuard } from './guards/only-logged-in-users-guard';
 import { AlwaysAuthChildrenGuard } from './guards/always-auth-children-guard';
 //interseptors
 import { MyInterceptor } from './service/interseptor.service';
-
-
 
 
 @NgModule({
@@ -95,6 +94,7 @@ import { MyInterceptor } from './service/interseptor.service';
     MaterialModule,
     HttpModule,
     //custom modules
+    AppLoadModule,
     ViewChildModule,
     RouterModule.forRoot([
       { 
@@ -149,10 +149,6 @@ import { MyInterceptor } from './service/interseptor.service';
           {path: 'albums', component: ArtistAlbumListComponent}
         ]
       },
-      /*{
-        path: 'view-child',
-        component: ViewChildModule
-      },*/
       {
         path: '**',
         component: NotFoundComponent
@@ -168,7 +164,7 @@ import { MyInterceptor } from './service/interseptor.service';
     AlwaysAuthChildrenGuard,
     //{ provide: APP_INITIALIZER, useFactory: init_app, deps: [AppLoadService], multi: true },
     //https://www.intertech.com/Blog/angular-4-tutorial-run-code-during-app-initialization/
-    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
+    //{ provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

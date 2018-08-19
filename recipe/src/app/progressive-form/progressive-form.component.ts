@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import 'rxjs/Rx';
+import 'rxjs';
 @Component({
   selector: 'app-progressive-form',
   templateUrl: './progressive-form.component.html',
