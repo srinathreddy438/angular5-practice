@@ -6,3 +6,7 @@ ul li {
 ul li div {
     width: 25%;
 }
+.no-items {
+    text-align: center;
+    font-size: 20px;
+}

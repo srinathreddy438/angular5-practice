@@ -9,7 +9,7 @@
 <div>
   Search place: <input type="text" placeholder="locality" name="locality" [(ngModel)]="locality" /> {{locality}}
 </div>
-
+<div class="no-items" *ngIf="!propertiesList">...Loading</div>
 <ul>
   <li>
     <div>propertySize</div>
