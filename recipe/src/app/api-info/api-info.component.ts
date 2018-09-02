@@ -3,7 +3,8 @@ import { Http, Response, RequestOptions, Headers, URLSearchParams } from '@angul
 import { SearchService } from '../service/search.service';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { forkJoin } from "rxjs/observable/forkJoin";
-
+import {map, catchError} from 'rxjs/operators';
+//import { of } from 'rxjs';
 @Component({
   selector: 'app-api-info',
   templateUrl: './api-info.component.html',
@@ -83,12 +84,16 @@ export class ApiInfoComponent implements OnInit {
 
 
     //fork join: call multiple api's at a time
-    let character = this.http.get('https://swapi.co/api/people/1');
-    let characterHomeworld = this.http.get('http://swapi.co/api/planets/1');
+    let character = this.http.get('http://private-1ad25-initializeng.apiary-mock.com/setting');
+    let characterHomeworld = this.http.get('http://private-1ad25-initializeng.apiary-mock.com/settings');
     forkJoin([character, characterHomeworld]).subscribe(results => {
       console.log("fork join");
       console.log(results);
-    });
+    },
+    err => {
+      console.log(err);
+    }
+    );
   }
 
   ngAfterViewInit() {
