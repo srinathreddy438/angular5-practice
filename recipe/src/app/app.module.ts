@@ -101,6 +101,10 @@ import { MyInterceptor } from './service/interseptor.service';
     AsyncModule,
     GridWithPipesModule,
     RouterModule.forRoot([
+      {
+        path: 'lazy-load',
+        loadChildren: 'app/lazy-load/lazy-load.module#LazyLoadModule'
+      },
       { 
         path: 'practice', 
         component: PracticeComponent 
@@ -168,7 +172,7 @@ import { MyInterceptor } from './service/interseptor.service';
     AlwaysAuthChildrenGuard,
     //{ provide: APP_INITIALIZER, useFactory: init_app, deps: [AppLoadService], multi: true },
     //https://www.intertech.com/Blog/angular-4-tutorial-run-code-during-app-initialization/
-    //{ provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
