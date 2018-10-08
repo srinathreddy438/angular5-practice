@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
  
 @Injectable() //we wish to inect this service in component thats why we are using Injectable method
 export class RecipeService {
@@ -13,4 +13,6 @@ export class RecipeService {
   getDefaultRecipe() {
     return this.defaultRecipe[0];
   }
+
+  showDetails = new EventEmitter();
 }

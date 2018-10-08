@@ -1,0 +1,16 @@
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{artistDetails && artistDetails.artistName}}</mat-card-title>
+        <mat-card-subtitle>{{artistDetails && artistDetails.artistId}}</mat-card-subtitle>
+      </mat-card-header>
+</mat-card>
+<br>
+<button mat-button mat-raised-button color="accent" [routerLink]="['albums']">Go To Albums List</button>
+<button mat-button mat-raised-button color="accent" [routerLink]="['tracks']">Go To Track List</button>
+<br>
+check service data
+<button mat-button mat-raised-button color="accent" (click)='updateServiceData()'>Update Service Data</button>
+<!-- {{checkData}} -->
+<!-- <h2>Album / Artist List</h2> -->
+<router-outlet></router-outlet>

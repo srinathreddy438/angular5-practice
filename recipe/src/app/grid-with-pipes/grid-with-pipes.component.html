@@ -1,0 +1,26 @@
+<div>
+  Select Property Range: <input type="range" min="100" max="1500" step="100" placeholder="searchProperty" name="searchProperty"
+    [(ngModel)]="searchProperty" /> {{searchProperty}}
+</div>
+<div>
+  Select Rent Range: <input type="range" min="1000" max="30000" step="1000" placeholder="searchRent" name="searchRent"
+    [(ngModel)]="searchRent" /> {{searchRent}}
+</div>
+<div>
+  Search place: <input type="text" placeholder="locality" name="locality" [(ngModel)]="locality" /> {{locality}}
+</div>
+<div class="no-items" *ngIf="!propertiesList">...Loading</div>
+<ul>
+  <li>
+    <div>propertySize</div>
+    <div>rent</div>
+    <div>type</div>
+    <div>Locality</div>
+  </li>
+  <li *ngFor="let property of propertiesList | filter: searchProperty : searchRent: locality">
+    <div>{{property.propertySize}}</div>
+    <div>{{property.rent}}</div>
+    <div>{{property.type}}</div>
+    <div>{{property.locality}}</div>
+  </li>
+</ul>

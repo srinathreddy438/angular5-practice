@@ -1,28 +1,35 @@
 <div  class="recipe-create-form">
   <h3>Recipe Create</h3>
-  <form #f="ngForm" name="recipeCreateForm">
-    <mat-form-field class="recipe-create-form-field-full-width">
-      <input matInput placeholder="Title" name="newRecipeName" required minlength="4" [(ngModel)]="newRecipeName"  #name="ngModel">
-    </mat-form-field>
-    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-      <div *ngIf="name.errors.required">
+  <form #f="ngForm" name="recipeCreateForm" (ngSubmit)="onAddRecipe()">
+      <fieldset ngModelGroup="name">
+        <mat-form-field class="recipe-create-form-field-full-width">
+          <input matInput placeholder="Title" name="newRecipeName" required minlength="4" [(ngModel)]="newRecipeName"  #name1="ngModel" #name2>
+        </mat-form-field>
+        <mat-form-field class="recipe-create-form-field-full-width">
+            <input matInput placeholder="Sub Title" name="newRecipeSubtitle" [(ngModel)]="newRecipeSubtitle">
+        </mat-form-field>
+      </fieldset>
+      value: {{name2.value}}
+    <div *ngIf="name1.invalid && (name1.dirty || name1.touched)" class="alert alert-danger">
+      <div *ngIf="name1.errors.required">
         Name is required.
       </div>
-      <div *ngIf="name.errors.minlength">
+      <div *ngIf="name1.errors.minlength">
         Name must be at least 4 characters long.
       </div>
     </div>
-
-    <mat-form-field class="recipe-create-form-field-full-width">
-      <input matInput placeholder="Sub Title" name="newRecipeSubtitle" [(ngModel)]="newRecipeSubtitle">
-    </mat-form-field>
 
     <mat-form-field class="recipe-create-form-field-full-width">
       <textarea matInput placeholder="Description" name="newRecipeContent" [(ngModel)]="newRecipeContent"></textarea>
     </mat-form-field>
 
     <div>
-      <button (click)="onAddRecipe(f)" mat-raised-button color="accent">Create</button>
+      <!-- <button (click)="onAddRecipe(f)" mat-raised-button color="accent">Create</button> -->
+      <button type="submit" [disabled]="f.invalid" mat-raised-button color="accent">Create</button>
     </div>
   </form>
 </div>
+<!-- 
+<pre>Valid? {{f.form.controls.newRecipeName?.valid}}</pre> -->
+<!-- ?(elvis operator) will check  f.form.controls.newRecipeName is null or undefined, if it not then only it will check valid or not-->
+{{f.value | json}}

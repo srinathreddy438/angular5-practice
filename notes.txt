@@ -98,3 +98,54 @@ directives
 __________
 @HostListener decorator - will useful for listen user events like click, mouse over, mouse out ... events on directive
 @HostBinding decorator - will useful for bind some property to host element based on flag
+
+firebase - deploy an angular app
+https://scotch.io/tutorials/deploying-an-angular-cli-app-to-production-with-firebase
+
+
+dynamic changes
+ngStyle, disabled, innerText
+
+<div [ngStyle]="{'color': 'red'}" [innerText]="'srinath'">
+    hi
+</div>
+<input type="text" [disabled]="'true'" />
+
+<ng-content select=".projectData"></ng-content>
+<customer-details>
+	<div class="projectData">hey i injected dynamic content in middle of component.</div>
+</customer-details>
+
+<div ngIf="serverFound; else notFound"></div>
+<ng-template #notFound></ng-template>
+
+
+build
+_____
+refer https://www.udemy.com/the-complete-guide-to-angular-2/learn/v4/t/lecture/6656752?start=0
+ng build --prod --aot
+this will create dist folder
+
+polyfills
+_________
+polyfills will make all ur java script functionality will work in modren browsers to older browsers
+ex: in html5 canvas in older browsers.
+
+MEAN
+____
+reference: https://scotch.io/tutorials/mean-app-with-angular-2-and-the-angular-cli
+https://www.sitepoint.com/mean-stack-angular-2-angular-cli/
+run Server
+_________
+node server.js
+instead of running two commands like this ng build && node server.js
+update package.json
+"build": "ng build && node server.js"
+
+in commang line 
+npm run build
+
+By default, npm doesn�t monitor your files/directories for any changes, and you have to manually restart the server every time you�ve updated your code. I recommend using nodemon to monitor your files and automatically restart the server when any changes are detected.
+npm install nodemon -g --save
+then run 
+nodemon server.js

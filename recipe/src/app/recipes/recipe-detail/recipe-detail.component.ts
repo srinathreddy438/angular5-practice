@@ -21,6 +21,9 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit() {
     //this.name = this.recipeService.getUser();
     this.recipe = this.recipeService.getDefaultRecipe();
+    this.recipeService.showDetails.subscribe((detail) => {
+      this.recipe = detail;
+    })
   }
 
 }

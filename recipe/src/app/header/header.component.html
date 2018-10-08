@@ -1,17 +1,47 @@
 <mat-toolbar color="primary">
   <mat-toolbar color="primary">
-      <span><a routerLink="">Home</a></span>
-    
-      <!-- This fills the remaining space of the current row -->
-      <span class="example-fill-remaining-space"></span>
-    
-      <mat-menu #appMenu="matMenu" yPosition="above">
-          <button mat-menu-item> <a routerLink="settings"> Settings </a></button>
-          <button mat-menu-item> <a routerLink="help"> Help </a></button>
-        </mat-menu>
-        
-        <button mat-icon-button [matMenuTriggerFor]="appMenu">
-          <mat-icon>more_vert</mat-icon>
-        </button>
-    </mat-toolbar>
+    <span>
+      <a routerLink="">Home</a>
+    </span>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+
+    <mat-menu #appMenu="matMenu" yPosition="above">
+      <button mat-menu-item>
+        <a routerLink="settings" routerLinkActive="activeLink"> Settings </a>
+      </button>
+      <button mat-menu-item>
+        <a routerLink="help" routerLinkActive="activeLink"> Help </a>
+      </button>
+      <button mat-menu-item>
+        <a routerLink="progressive-form" routerLinkActive="activeLink"> Progressive Form </a>
+      </button>
+      <button mat-menu-item>
+        <a routerLink="api-info" routerLinkActive="activeLink"> Api Info </a>
+      </button>
+      <button mat-menu-item>
+        <a routerLink="test-routing" routerLinkActive="activeLink"> Test Routing </a>
+      </button>
+      <button mat-menu-item>
+        <a routerLink="artist" routerLinkActive="activeLink"> Artist Search </a>
+      </button>
+      <button mat-menu-item>
+        <a routerLink="view-child" routerLinkActive="activeLink"> View Child </a>
+      </button>
+      <button mat-menu-item>
+        <a routerLink="async" routerLinkActive="activeLink"> Async </a>
+      </button>
+      <button mat-menu-item>
+        <a routerLink="grid-with-pipes" routerLinkActive="activeLink"> Grid with pipes </a>
+      </button>
+      <button mat-menu-item>
+        <a routerLink="lazy-load" routerLinkActive="activeLink"> Lazy Load </a>
+      </button>
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-toolbar>
 </mat-toolbar>

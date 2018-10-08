@@ -1,0 +1,3 @@
+<h5>Counting Down From {{ countDown }}!</h5>
+<h2 *ngIf="!countCompleted">{{ count$ | async }}</h2>
+<h5 *ngIf="countCompleted">{{ message }}</h5>
