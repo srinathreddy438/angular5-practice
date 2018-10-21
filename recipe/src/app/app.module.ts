@@ -24,47 +24,47 @@ import { ProgressiveFormComponent } from './progressive-form/progressive-form.co
 import { ApiInfoComponent } from './api-info/api-info.component';
 import { TestRoutingComponent } from './test-routing/test-routing.component';
 import { LoginComponent } from './login/login.component';
-//search artist list
+// search artist list
 import { SearchComponent } from './search/search.component';
-//particular artist details
+// particular artist details
 import { ArtistComponent } from './artist/artist.component';
-//particular artist track list
+// particular artist track list
 import { ArtistTrackListComponent } from './artist/artist-track-list/artist-track-list.component';
-//particular artist album list
+// particular artist album list
 import { ArtistAlbumListComponent } from './artist/artist-album-list/artist-album-list.component';
-//view child module
+// view child module
 import { ViewChildModule } from './view-child/view-child.module';
 import { AppLoadModule } from './app-load/app-load.module';
 import { AsyncModule } from './async/async.module';
 import { GridWithPipesModule } from './grid-with-pipes/grid-with-pipes.module';
 
-//custom pipes
+// custom pipes
 import { SqrtPipe } from './pipes/app.sqrt';
 import { DefaultPipe } from './pipes/default-pipe/default.pipe';
 
-//custom directives
+// custom directives
 import { HighlightDirective } from './directives/my-highlight-directive';
 
-//services
+// services
 import { RecipeService } from './service/recipe.service';
 import { SearchService } from './service/search.service';
 import { UserService } from './service/user.service';
-//guard services
+// guard services
 import { AlwaysAuthGuard } from './guards/always-auth-guard';
 import { OnlyLoggedInUsersGuard } from './guards/only-logged-in-users-guard';
 import { AlwaysAuthChildrenGuard } from './guards/always-auth-children-guard';
-//interseptors
+// interseptors
 import { MyInterceptor } from './service/interseptor.service';
 
 
 @NgModule({
   declarations: [
-    //pipes
+    // pipes
     SqrtPipe,
     DefaultPipe,
-    //custom directives
+    // custom directives
     HighlightDirective,
-    //components
+    // components
     AppComponent,
     ServersComponent,
     ServerComponent,
@@ -95,7 +95,7 @@ import { MyInterceptor } from './service/interseptor.service';
     BrowserAnimationsModule,
     MaterialModule,
     HttpModule,
-    //custom modules
+    // custom modules
     AppLoadModule,
     ViewChildModule,
     AsyncModule,
@@ -105,42 +105,42 @@ import { MyInterceptor } from './service/interseptor.service';
         path: 'lazy-load',
         loadChildren: 'app/lazy-load/lazy-load.module#LazyLoadModule'
       },
-      { 
-        path: 'practice', 
-        component: PracticeComponent 
-      },
-      { 
-        path: '', 
-        component: HomeComponent 
-      },
-      { 
-        path: 'home', 
-        component: HomeComponent 
+      {
+        path: 'practice',
+        component: PracticeComponent
       },
       {
-        path: 'recipe', 
-        redirectTo: '/home', 
-        pathMatch: 'full' 
+        path: '',
+        component: HomeComponent
       },
-      { 
-        path: 'settings', 
-        component: SettingsComponent 
+      {
+        path: 'home',
+        component: HomeComponent
       },
-      { 
-        path: 'help', 
-        component: HelpComponent 
+      {
+        path: 'recipe',
+        redirectTo: '/home',
+        pathMatch: 'full'
       },
-      { 
-        path: 'progressive-form', 
-        component: ProgressiveFormComponent 
+      {
+        path: 'settings',
+        component: SettingsComponent
       },
-      { 
-        path: 'api-info', 
-        component: ApiInfoComponent 
+      {
+        path: 'help',
+        component: HelpComponent
       },
-      { 
-        path: 'test-routing', 
-        component: TestRoutingComponent 
+      {
+        path: 'progressive-form',
+        component: ProgressiveFormComponent
+      },
+      {
+        path: 'api-info',
+        component: ApiInfoComponent
+      },
+      {
+        path: 'test-routing',
+        component: TestRoutingComponent
       },
       {
         path: 'artist',
@@ -152,9 +152,9 @@ import { MyInterceptor } from './service/interseptor.service';
         canActivate: [AlwaysAuthGuard, OnlyLoggedInUsersGuard],
         canActivateChild: [AlwaysAuthChildrenGuard],
         children: [
-          //{path: '', redirectTo: 'tracks', pathMatch: 'full'}, 
-          {path: 'tracks', component: ArtistTrackListComponent}, 
-          {path: 'albums', component: ArtistAlbumListComponent}
+          // {path: '', redirectTo: 'tracks', pathMatch: 'full'},
+          { path: 'tracks', component: ArtistTrackListComponent },
+          { path: 'albums', component: ArtistAlbumListComponent }
         ]
       },
       {
@@ -164,14 +164,14 @@ import { MyInterceptor } from './service/interseptor.service';
     ])
   ],
   providers: [
-    RecipeService, 
+    RecipeService,
     SearchService,
     UserService,
     AlwaysAuthGuard,
     OnlyLoggedInUsersGuard,
     AlwaysAuthChildrenGuard,
-    //{ provide: APP_INITIALIZER, useFactory: init_app, deps: [AppLoadService], multi: true },
-    //https://www.intertech.com/Blog/angular-4-tutorial-run-code-during-app-initialization/
+    // { provide: APP_INITIALIZER, useFactory: init_app, deps: [AppLoadService], multi: true },
+    // https://www.intertech.com/Blog/angular-4-tutorial-run-code-during-app-initialization/
     { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
