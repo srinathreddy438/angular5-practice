@@ -37,10 +37,12 @@ import { ViewChildModule } from './view-child/view-child.module';
 import { AppLoadModule } from './app-load/app-load.module';
 import { AsyncModule } from './async/async.module';
 import { GridWithPipesModule } from './grid-with-pipes/grid-with-pipes.module';
+import { GridWithPipesWithResolveModule } from './grid-with-pipes-with-resolve/grid-with-pipes-with-resolve.module';
 
 // custom pipes
 import { SqrtPipe } from './pipes/app.sqrt';
 import { DefaultPipe } from './pipes/default-pipe/default.pipe';
+import { FilterPipe } from './grid-with-pipes/grid-filter.pipe';
 
 // custom directives
 import { HighlightDirective } from './directives/my-highlight-directive';
@@ -49,6 +51,7 @@ import { HighlightDirective } from './directives/my-highlight-directive';
 import { RecipeService } from './service/recipe.service';
 import { SearchService } from './service/search.service';
 import { UserService } from './service/user.service';
+
 // guard services
 import { AlwaysAuthGuard } from './guards/always-auth-guard';
 import { OnlyLoggedInUsersGuard } from './guards/only-logged-in-users-guard';
@@ -62,6 +65,7 @@ import { MyInterceptor } from './service/interseptor.service';
     // pipes
     SqrtPipe,
     DefaultPipe,
+    FilterPipe,
     // custom directives
     HighlightDirective,
     // components
@@ -100,6 +104,7 @@ import { MyInterceptor } from './service/interseptor.service';
     ViewChildModule,
     AsyncModule,
     GridWithPipesModule,
+    GridWithPipesWithResolveModule,
     RouterModule.forRoot([
       {
         path: 'lazy-load',
