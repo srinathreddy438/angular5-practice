@@ -9,19 +9,19 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./artist-track-list.component.css']
 })
 export class ArtistTrackListComponent implements OnInit {
-  loading; 
+  loading;
   artistTrackList;
   getArtistTrackDetails(artistId) {
     this.loading = true;
     this.searchServe.artistTrackList(artistId).then(
       res => {
         this.loading = false;
-        this.artistTrackList = res
+        this.artistTrackList = res;
       }
-    )
+    );
   }
-  constructor( private searchServe: SearchService, private activatedRouter: ActivatedRoute) { 
-    this.activatedRouter.parent.params.subscribe( params => {
+  constructor(private searchServe: SearchService, private activatedRouter: ActivatedRoute) {
+    this.activatedRouter.parent.params.subscribe(params => {
       this.getArtistTrackDetails(params.artistId);
     });
   }

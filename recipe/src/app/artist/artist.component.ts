@@ -8,9 +8,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./artist.component.css']
 })
 export class ArtistComponent implements OnInit {
-  loading; 
+  loading;
   artistDetails;
-  //checkData = "intian value";
+  // checkData = "intian value";
   getArtistDetails(artistId) {
     this.loading = true;
     this.searchServe.artistDetail(artistId).then(
@@ -18,17 +18,17 @@ export class ArtistComponent implements OnInit {
         this.loading = false;
         this.artistDetails = res[0];
       }
-    )
+    );
   }
-  constructor( private searchServe: SearchService, private activatedRouter: ActivatedRoute) { 
-    this.activatedRouter.params.subscribe( params => {
+  constructor(private searchServe: SearchService, private activatedRouter: ActivatedRoute) {
+    this.activatedRouter.params.subscribe(params => {
       this.getArtistDetails(params.artistId);
     });
   }
 
   updateServiceData() {
-    //this.searchServe.storeData('sri');
-    this.searchServe.updateDate.emit("this is new data");
+    // this.searchServe.storeData('sri');
+    this.searchServe.updateDate.emit('this is new data');
   }
 
   ngOnInit() {

@@ -8,7 +8,7 @@ import { Http } from '@angular/http';
 })
 export class GridWithPipesComponent implements OnInit {
   title = 'app';
-  apiRoot: string = "http://demo8213882.mockable.io/fetchProperties";
+  apiRoot = 'http://demo8213882.mockable.io/fetchProperties';
   propertiesList;
   searchProperty;
   searchRent;
@@ -21,18 +21,18 @@ export class GridWithPipesComponent implements OnInit {
   }
 
   constructor(private http: Http) {
-    
+
   }
   getPropertyList() {
-    let url = `${this.apiRoot}`;
+    const url = `${this.apiRoot}`;
     this.http.get(url)
       .toPromise()
       .then(
         res => {
-          console.log(res.json())
+          console.log(res.json());
           this.propertiesList = res.json().data;
         },
-        msg => console.error(`Error: ${msg.status} ${msg.statusText}`) 
+        msg => console.error(`Error: ${msg.status} ${msg.statusText}`)
       );
   }
 
