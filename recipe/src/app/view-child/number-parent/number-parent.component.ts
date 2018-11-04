@@ -4,7 +4,7 @@ import { NumberComponent } from './number/number.component';
 @Component({
   selector: 'app-number-parent',
   templateUrl: './number-parent.component.html',
-  styleUrls: ['./number-parent.component.css']
+  styleUrls: ['./number-parent.component.scss']
 })
 export class NumberParentComponent {
   @ViewChild(NumberComponent)

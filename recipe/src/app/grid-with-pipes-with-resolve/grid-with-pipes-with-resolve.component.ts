@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-grid-with-pipes-with-resolve',
   templateUrl: './grid-with-pipes-with-resolve.component.html',
-  styleUrls: ['./grid-with-pipes-with-resolve.component.css']
+  styleUrls: ['./grid-with-pipes-with-resolve.component.scss']
 })
 export class GridWithPipesWithResolveComponent implements OnInit {
   propertiesList;

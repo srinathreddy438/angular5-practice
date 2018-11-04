@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   //as a class
   //selector: '.app-server-as-a-class',
   templateUrl: './server.component.html',
-  styleUrls: ['./server.component.css']
+  styleUrls: ['./server.component.scss']
 })
 export class ServerComponent implements OnInit {
   disableBtn = true;

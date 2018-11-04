@@ -4,7 +4,7 @@ import 'rxjs';
 @Component({
   selector: 'app-progressive-form',
   templateUrl: './progressive-form.component.html',
-  styleUrls: ['./progressive-form.component.css']
+  styleUrls: ['./progressive-form.component.scss']
 })
 export class ProgressiveFormComponent implements OnInit {
   myform: FormGroup;

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'app-async-with-observable',
   templateUrl: './async-with-observable.component.html',
-  styleUrls: ['./async-with-observable.component.css']
+  styleUrls: ['./async-with-observable.component.scss']
 })
 export class AsyncWithObservableComponent implements OnInit {
   countCompleted: boolean;

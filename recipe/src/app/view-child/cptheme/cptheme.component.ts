@@ -3,7 +3,7 @@ import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 @Component({
   selector: 'app-cptheme',
   templateUrl: './cptheme.component.html',
-  styleUrls: ['./cptheme.component.css']
+  styleUrls: ['./cptheme.component.scss']
 })
 export class CpthemeComponent implements AfterViewInit {
 

@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
     templateUrl : "./servers.component.html",
     //imline template
     //template: "<app-server></app-server><app-server></app-server><app-server></app-server>",
-    styleUrls: ['./servers.component.css']
+    styleUrls: ['./servers.component.scss']
     //inline styles
     /*styles: [
         `h1 {

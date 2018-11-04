@@ -6,7 +6,7 @@ import { RecipeService } from '../../service/recipe.service'
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
-  styleUrls: ['./recipe-list.component.css']
+  styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent implements OnInit, OnChanges {
  arr = [1,2,3,4,5,6,7,8,9,10];

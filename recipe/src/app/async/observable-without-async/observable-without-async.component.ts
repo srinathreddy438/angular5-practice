@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'app-observable-without-async',
   templateUrl: './observable-without-async.component.html',
-  styleUrls: ['./observable-without-async.component.css']
+  styleUrls: ['./observable-without-async.component.scss']
 })
 export class ObservableWithoutAsyncComponent implements OnInit {
   observableRes : number;

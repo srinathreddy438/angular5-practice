@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 @Component({
   selector: 'app-grid-with-pipes',
   templateUrl: './grid-with-pipes.component.html',
-  styleUrls: ['./grid-with-pipes.component.css']
+  styleUrls: ['./grid-with-pipes.component.scss']
 })
 export class GridWithPipesComponent implements OnInit {
   title = 'app';

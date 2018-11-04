@@ -3,7 +3,7 @@ import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/cor
 @Component({
   selector: 'app-recipe-create',
   templateUrl: './recipe-create.component.html',
-  styleUrls: ['./recipe-create.component.css']
+  styleUrls: ['./recipe-create.component.scss']
 })
 export class RecipeCreateComponent implements OnInit {
   //@Output() recipeCreated = new EventEmitter<{recipeName: string, recipeSubtitle: string, recipeContent: string}>();
