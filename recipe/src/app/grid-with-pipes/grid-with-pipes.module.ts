@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { GridWithPipesComponent } from './grid-with-pipes.component';
-import { FilterPipe } from './grid-filter.pipe';
+// filter module
+import { GridFilterPipeModule } from '../pipes/grid-filter.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    GridFilterPipeModule, // filter module
     RouterModule.forRoot([
       {
         path: 'grid-with-pipes',
@@ -17,8 +19,7 @@ import { FilterPipe } from './grid-filter.pipe';
     ])
   ],
   declarations: [
-    GridWithPipesComponent,
-    FilterPipe
+    GridWithPipesComponent
   ]
 })
 export class GridWithPipesModule { }

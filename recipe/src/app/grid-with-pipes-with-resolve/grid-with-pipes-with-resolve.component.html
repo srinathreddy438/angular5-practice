@@ -18,7 +18,7 @@
       <div>type</div>
       <div>Locality</div>
     </li>
-    <li *ngFor="let property of propertiesList">
+    <li *ngFor="let property of propertiesList | filter: searchProperty : searchRent: locality">
       <div>{{property.propertySize}}</div>
       <div>{{property.rent}}</div>
       <div>{{property.type}}</div>

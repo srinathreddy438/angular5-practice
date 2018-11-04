@@ -42,7 +42,7 @@ import { GridWithPipesWithResolveModule } from './grid-with-pipes-with-resolve/g
 // custom pipes
 import { SqrtPipe } from './pipes/app.sqrt';
 import { DefaultPipe } from './pipes/default-pipe/default.pipe';
-import { FilterPipe } from './grid-with-pipes/grid-filter.pipe';
+import { GridFilterPipeModule } from './pipes/grid-filter.pipe';
 
 // custom directives
 import { HighlightDirective } from './directives/my-highlight-directive';
@@ -65,7 +65,6 @@ import { MyInterceptor } from './service/interseptor.service';
     // pipes
     SqrtPipe,
     DefaultPipe,
-    FilterPipe,
     // custom directives
     HighlightDirective,
     // components
@@ -105,6 +104,9 @@ import { MyInterceptor } from './service/interseptor.service';
     AsyncModule,
     GridWithPipesModule,
     GridWithPipesWithResolveModule,
+    // pipes module
+    GridFilterPipeModule,
+
     RouterModule.forRoot([
       {
         path: 'lazy-load',

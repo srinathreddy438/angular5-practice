@@ -11,7 +11,6 @@
     Search place: <input type="text" placeholder="locality" name="locality" [(ngModel)]="locality" /> {{locality}}
   </div>
   <div class="no-items" *ngIf="!propertiesList">...Loading</div>
-  <b>Square root of 25 is: {{16 | sqrt}}</b>
   <ul>
     <li>
       <div>propertySize</div>
@@ -19,8 +18,7 @@
       <div>type</div>
       <div>Locality</div>
     </li>
-    <!-- <li *ngFor="let property of propertiesList | filter: searchProperty : searchRent: locality"> -->
-    <li *ngFor="let property of propertiesList">
+    <li *ngFor="let property of propertiesList | filter: searchProperty : searchRent: locality">
       <div>{{property.propertySize}}</div>
       <div>{{property.rent}}</div>
       <div>{{property.type}}</div>
