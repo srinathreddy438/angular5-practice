@@ -42,7 +42,6 @@ import { GridWithPipesWithResolveModule } from './grid-with-pipes-with-resolve/g
 // custom pipes
 import { SqrtPipe } from './pipes/app.sqrt';
 import { DefaultPipe } from './pipes/default-pipe/default.pipe';
-import { GridFilterPipeModule } from './pipes/grid-filter.pipe';
 
 // custom directives
 import { HighlightDirective } from './directives/my-highlight-directive';
@@ -59,6 +58,8 @@ import { AlwaysAuthChildrenGuard } from './guards/always-auth-children-guard';
 // interseptors
 import { MyInterceptor } from './service/interseptor.service';
 
+// shared module
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -104,8 +105,8 @@ import { MyInterceptor } from './service/interseptor.service';
     AsyncModule,
     GridWithPipesModule,
     GridWithPipesWithResolveModule,
-    // pipes module
-    GridFilterPipeModule,
+    // shared module
+    SharedModule,
 
     RouterModule.forRoot([
       {

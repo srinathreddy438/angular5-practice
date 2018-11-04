@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { catchError, map } from 'rxjs/operators';
 // filter module
-import { GridFilterPipeModule } from '../pipes/grid-filter.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 @Injectable()
 export class ListWithResolverService implements Resolve<any> {
@@ -48,7 +48,7 @@ export class GridListWithResolverService implements Resolve<any> {
   imports: [
     CommonModule,
     FormsModule,
-    GridFilterPipeModule, // filter module
+    SharedModule, // filter module
     RouterModule.forRoot([
       {
         path: 'grid-with-pipes-with-resolve',
