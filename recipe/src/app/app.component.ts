@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Event, NavigationEnd, NavigationStart, Router } from '@angular/router';
-
+import { LoaderService } from './shared/interceptor';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,15 +9,15 @@ import { Event, NavigationEnd, NavigationStart, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'sri';
-  showLoadingIndicator = true;
-  constructor(private _route: Router) {
-    this._route.events.subscribe((routerEvent: Event) => {
+   // showLoadingIndicator = true;
+  constructor(private _route: Router, public loaderService: LoaderService) {
+    /*this._route.events.subscribe((routerEvent: Event) => {
       if (routerEvent instanceof NavigationStart) {
         this.showLoadingIndicator = true;
       }
       if (routerEvent instanceof NavigationEnd) {
         this.showLoadingIndicator = false;
       }
-    });
+    });*/
   }
 }

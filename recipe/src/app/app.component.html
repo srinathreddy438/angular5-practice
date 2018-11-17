@@ -1,3 +1,10 @@
 <app-header></app-header>
-<img class="spinner" *ngIf="showLoadingIndicator" src="https://loading.io/spinners/leave/index.laurel-leaves-spinner.svg">
+<!-- <img class="spinner" *ngIf="showLoadingIndicator" src="https://loading.io/spinners/leave/index.laurel-leaves-spinner.svg"> -->
+<img class="spinner" *ngIf="loaderService.isLoading | async" src="https://loading.io/spinners/leave/index.laurel-leaves-spinner.svg">
+<!-- <p *ngIf="loaderService.isLoading | async">
+    Loading!
+  </p>
+  <p *ngIf="!(loaderService.isLoading | async)">
+    Not Loading!
+  </p> -->
 <router-outlet></router-outlet>

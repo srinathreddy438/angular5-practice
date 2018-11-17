@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule  } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ServersComponent } from './servers/servers.component';
@@ -98,7 +98,8 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpModule,
+    HttpModule, // we may need to remove
+    HttpClientModule,
     // custom modules
     AppLoadModule,
     ViewChildModule,
