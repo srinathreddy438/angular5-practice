@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, Directive, Input, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, Directive, Input, QueryList, ViewChildren, OnInit } from '@angular/core';
 
-@Directive({ selector: 'pane' })
-export class Pane {
+@Directive({ selector: '[appPane]' })
+export class PaneDirective {
   // TODO(issue/24571): remove '!'.
   @Input() id: string;
   hidden = true;
@@ -11,13 +11,16 @@ export class Pane {
 }
 
 @Component({
-  selector: 'example-app',
+  selector: 'app-example',
   templateUrl: 'view-children.html',
 })
-export class ViewChildrenComp implements AfterViewInit {
+export class ViewChildrenComponent implements AfterViewInit, OnInit {
   // TODO(issue/24571): remove '!'.
-  @ViewChildren(Pane) panes: QueryList<Pane>;
-  serializedPanes: string = '';
+  @ViewChildren(PaneDirective) panes: QueryList<PaneDirective>;
+  serializedPanes: string;
+  ngOnInit() {
+    this.serializedPanes = '';
+  }
 
   // shouldShow = false;
 

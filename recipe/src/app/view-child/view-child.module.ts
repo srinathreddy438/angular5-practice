@@ -7,7 +7,7 @@ import { NumberComponent } from './number-parent/number/number.component';
 import { CpcolorParentComponent } from './cpcolor-parent/cpcolor-parent.component';
 import { CpcolorDirective } from './cpcolor-parent/cpcolor.directive';
 import { CpthemeComponent } from './cptheme/cptheme.component';
-import { Pane, ViewChildrenComp } from './view-children/view-children.component';
+import { PaneDirective, ViewChildrenComponent } from './view-children/view-children.component';
 
 
 @NgModule({
@@ -18,8 +18,8 @@ import { Pane, ViewChildrenComp } from './view-children/view-children.component'
         CpcolorParentComponent,
         CpcolorDirective,
         CpthemeComponent,
-        Pane,
-        ViewChildrenComp
+        PaneDirective,
+        ViewChildrenComponent
     ],
     imports: [
         RouterModule.forRoot([
