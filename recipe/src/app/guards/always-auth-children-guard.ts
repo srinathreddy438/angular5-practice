@@ -1,8 +1,8 @@
-import {CanActivateChild} from "@angular/router";
+import { CanActivateChild } from '@angular/router';
 
 export class AlwaysAuthChildrenGuard implements CanActivateChild {
   canActivateChild() {
-    console.log("AlwaysAuthChildrenGuard");
+    console.log('AlwaysAuthChildrenGuard');
     return true;
   }
 }

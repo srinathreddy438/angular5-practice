@@ -21,7 +21,7 @@ export class TestRoutingComponent implements OnInit {
     this.router.navigate(['api-info']);
   }
 
-  //if path like this http://localhost:4200/api-info/test then u can write like this.router.navigate(['api-info', 'test']);
+  // if path like this http://localhost:4200/api-info/test then u can write like this.router.navigate(['api-info', 'test']);
 
 
 }

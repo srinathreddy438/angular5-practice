@@ -9,7 +9,7 @@ import { LoaderService } from './shared/interceptor';
 })
 export class AppComponent {
   title = 'sri';
-   // showLoadingIndicator = true;
+  // showLoadingIndicator = true;
   constructor(private _route: Router, public loaderService: LoaderService) {
     /*this._route.events.subscribe((routerEvent: Event) => {
       if (routerEvent instanceof NavigationStart) {

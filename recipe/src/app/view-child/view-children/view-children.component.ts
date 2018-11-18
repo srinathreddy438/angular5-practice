@@ -1,9 +1,9 @@
-import {AfterViewInit, Component, Directive, Input, QueryList, ViewChildren} from '@angular/core';
+import { AfterViewInit, Component, Directive, Input, QueryList, ViewChildren } from '@angular/core';
 
-@Directive({selector: 'pane'})
+@Directive({ selector: 'pane' })
 export class Pane {
   // TODO(issue/24571): remove '!'.
-  @Input() id : string;
+  @Input() id: string;
   hidden = true;
   show() {
     this.hidden = false;
@@ -16,20 +16,20 @@ export class Pane {
 })
 export class ViewChildrenComp implements AfterViewInit {
   // TODO(issue/24571): remove '!'.
-  @ViewChildren(Pane) panes : QueryList<Pane>;
+  @ViewChildren(Pane) panes: QueryList<Pane>;
   serializedPanes: string = '';
 
-  //shouldShow = false;
+  // shouldShow = false;
 
-  //show() { this.shouldShow = true; }
+  // show() { this.shouldShow = true; }
 
   ngAfterViewInit() {
-    //this.calculateSerializedPanes();
-    //this.panes.changes.subscribe((r) => { this.calculateSerializedPanes(); });
+    // this.calculateSerializedPanes();
+    // this.panes.changes.subscribe((r) => { this.calculateSerializedPanes(); });
     this.panes.changes.subscribe((r) => { console.log(this.panes); });
   }
-/*
-  calculateSerializedPanes() {
-    setTimeout(() => { this.serializedPanes = this.panes.map(p => p.id).join(', '); }, 0);
-  }*/
+  /*
+    calculateSerializedPanes() {
+      setTimeout(() => { this.serializedPanes = this.panes.map(p => p.id).join(', '); }, 0);
+    }*/
 }

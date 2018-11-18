@@ -11,7 +11,7 @@
     }
 }*/
 
-//this will do same thing as above
+// this will do same thing as above
 export class Recipe {
-    constructor(public title: string, public subTitle: string, public description: string, public image: string) {}
+    constructor(public title: string, public subTitle: string, public description: string, public image: string) { }
 }

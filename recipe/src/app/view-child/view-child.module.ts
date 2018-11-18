@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ViewChildComponent } from './view-child.component'
-//load child components
+import { ViewChildComponent } from './view-child.component';
+// load child components
 import { NumberParentComponent } from './number-parent/number-parent.component';
 import { NumberComponent } from './number-parent/number/number.component';
 import { CpcolorParentComponent } from './cpcolor-parent/cpcolor-parent.component';
@@ -30,9 +30,9 @@ import { Pane, ViewChildrenComp } from './view-children/view-children.component'
         ])
     ],
     providers: [],
-    //entryComponents: [ViewChildComponent]
+    // entryComponents: [ViewChildComponent]
 })
 
-export class ViewChildModule{ }
+export class ViewChildModule { }
 
-//http://www.codeman.in/blog/angular-2-viewchild-example-160
+// http://www.codeman.in/blog/angular-2-viewchild-example-160

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LazyLoadComponent } from './lazy-load.component';
 @NgModule({
-    imports : [
+    imports: [
         RouterModule.forChild([
             {
                 path: '',

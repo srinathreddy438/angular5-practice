@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { HTTP_INTERCEPTORS, HttpClientModule  } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ServersComponent } from './servers/servers.component';

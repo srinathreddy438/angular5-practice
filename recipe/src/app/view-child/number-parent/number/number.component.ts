@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./number.component.scss']
 })
 export class NumberComponent {
-  count: number = 0;
+  count: number;
+  constructor() {
+    this.count = 0;
+  }
   increaseByOne() {
     this.count++;
   }

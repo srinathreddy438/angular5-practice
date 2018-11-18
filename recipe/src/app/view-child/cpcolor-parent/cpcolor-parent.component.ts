@@ -7,8 +7,8 @@ import { CpcolorDirective } from './cpcolor.directive';
   styleUrls: ['./cpcolor-parent.component.scss']
 })
 export class CpcolorParentComponent implements AfterViewInit {
-  @ViewChild('CpcolorDirective') 
-  private cpcolorDirective : CpcolorDirective;
+  @ViewChild('CpcolorDirective')
+  private cpcolorDirective: CpcolorDirective;
   ngAfterViewInit() {
     console.log(this.cpcolorDirective);
   }
