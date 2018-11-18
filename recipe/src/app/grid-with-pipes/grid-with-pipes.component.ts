@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-grid-with-pipes',
   templateUrl: './grid-with-pipes.component.html',
-  styleUrls: ['./grid-with-pipes.component.css']
+  styleUrls: ['./grid-with-pipes.component.scss']
 })
 export class GridWithPipesComponent implements OnInit {
   title = 'app';
@@ -20,7 +20,8 @@ export class GridWithPipesComponent implements OnInit {
     this.locality = '';
   }
 
-  constructor(private http: Http) {
+  // constructor(private http: Http) {
+  constructor(private http: HttpClient) {
 
   }
   getPropertyList() {
@@ -29,8 +30,7 @@ export class GridWithPipesComponent implements OnInit {
       .toPromise()
       .then(
         res => {
-          console.log(res.json());
-          this.propertiesList = res.json().data;
+          this.propertiesList = res['data'];
         },
         msg => console.error(`Error: ${msg.status} ${msg.statusText}`)
       );

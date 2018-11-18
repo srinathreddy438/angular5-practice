@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component ({
-    selector: "app-servers",
-    templateUrl : "./servers.component.html",
-    //imline template
-    //template: "<app-server></app-server><app-server></app-server><app-server></app-server>",
-    styleUrls: ['./servers.component.css']
-    //inline styles
+@Component({
+    selector: 'app-servers',
+    templateUrl: './servers.component.html',
+    // imline template
+    // template: '<app-server></app-server><app-server></app-server><app-server></app-server>',
+    styleUrls: ['./servers.component.scss']
+    // inline styles
     /*styles: [
         `h1 {
             color: red;
@@ -33,11 +33,11 @@ import { Component, OnInit } from '@angular/core';
 }*/
 
 export class ServersComponent {
-    changeText = "this will change when we click on above button";
+    changeText = 'this will change when we click on above button';
     serverStatus = false;
-    servers = ["server1", "server2", "server3"];
+    servers = ['server1', 'server2', 'server3'];
     onChangeText() {
-        this.changeText = "text chnaged";
+        this.changeText = 'text chnaged';
         this.serverStatus = true;
     }
     onUpdateText(event) {

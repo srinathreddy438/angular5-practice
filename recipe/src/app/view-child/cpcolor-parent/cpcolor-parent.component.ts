@@ -4,11 +4,11 @@ import { CpcolorDirective } from './cpcolor.directive';
 @Component({
   selector: 'app-cpcolor-parent',
   templateUrl: './cpcolor-parent.component.html',
-  styleUrls: ['./cpcolor-parent.component.css']
+  styleUrls: ['./cpcolor-parent.component.scss']
 })
 export class CpcolorParentComponent implements AfterViewInit {
-  @ViewChild('CpcolorDirective') 
-  private cpcolorDirective : CpcolorDirective;
+  @ViewChild('CpcolorDirective')
+  private cpcolorDirective: CpcolorDirective;
   ngAfterViewInit() {
     console.log(this.cpcolorDirective);
   }

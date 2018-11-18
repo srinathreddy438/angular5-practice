@@ -1,39 +1,43 @@
-import { Injectable , EventEmitter} from '@angular/core';
-import { Http, RequestOptions, URLSearchParams } from '@angular/http';
-import { Observable, Observer } from 'rxjs';
+import { Injectable, EventEmitter } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable()
 export class SearchService {
 
-  constructor(private http: Http) { }
-  //test service 
+  // updateDate: any;
+  // results: any;
+  private apiUrl = 'https://itunes.apple.com/search';
+  private artistBaseApi = 'https://itunes.apple.com/lookup';
+  public updateDate = new EventEmitter<any>();
+  constructor(private httpCall: HttpClient) { }
+  // test service
   /*
   testName(name) {
     return name;
   }
   name = 'srinath';
   */
- /*updateDate : Observable<any> = new Observable((observer: Observer<any>)=> {
-  observer.next("service init value");
-}) ;*/
-  updateDate = new EventEmitter<any>();
-  setData: string;
-  results = [];
-  apiUrl: string = 'https://itunes.apple.com/search';
-  artistBaseApi: string = 'https://itunes.apple.com/lookup';
-  //promise
+  /*updateDate : Observable<any> = new Observable((observer: Observer<any>)=> {
+   observer.next("service init value");
+ }) ;*/
+  // promise
   doSearchList(term) {
-    var promise = new Promise((resolve, reject) => {
-      var options = new RequestOptions();
-      var search = new URLSearchParams();
-      search.set("term", term);
-      search.set("media", "music");
-      search.set("limit", '200');
-      options.search = search;
-      this.http.get(this.apiUrl, options).toPromise().then(
+    const promise = new Promise((resolve, reject) => {
+      // angular 4.4
+      /*
+      const params = new RequestOptions();
+      const search = new URLSearchParams();
+      search.set('term', term);
+      search.set('media', 'music');
+      search.set('limit', '200');
+      params.search = search;
+      */
+      // above angular 4.4
+      const params = new HttpParams().set('term', term).set('media', 'music').set('limit', '200');
+      this.httpCall.get(this.apiUrl, { params }).toPromise().then(
         res => {
-          this.results = res.json().results;
-          resolve(this.results);
+          const results = res && res['results'];
+          resolve(results);
         },
         err => {
           reject(err);
@@ -43,28 +47,20 @@ export class SearchService {
     return promise;
   }
 
-  //observable
+  // observable
   doSearchListAsObservable(term) {
-    var options = new RequestOptions();
-    var search = new URLSearchParams();
-    search.set("term", term);
-    search.set("media", "music");
-    search.set("limit", '200');
-    options.search = search;
-    return this.http.get(this.apiUrl, options).map(res => res.json().results);
+    const params = new HttpParams().set('term', term).set('media', 'music').set('limit', '200');
+    return this.httpCall.get(this.apiUrl, {params}).map(res => res['results']);
   }
 
-  //artist details
+  // artist details
   artistDetail(artistId) {
-    var promise = new Promise((resolve, reject) => {
-      var options = new RequestOptions();
-      var search = new URLSearchParams();
-      search.set("id", artistId);
-      options.search = search;
-      this.http.get(this.artistBaseApi, options).toPromise().then(
+    const promise = new Promise((resolve, reject) => {
+      const params = new HttpParams().set('id', artistId);
+      this.httpCall.get(this.artistBaseApi, {params}).toPromise().then(
         res => {
-          this.results = res.json().results;
-          resolve(this.results);
+          const results = res['results'];
+          resolve(results);
         },
         err => {
           reject(err);
@@ -74,18 +70,14 @@ export class SearchService {
     return promise;
   }
 
-  //artist album list
+  // artist album list
   artistAlbumList(artistId) {
-    var promise = new Promise((resolve, reject) => {
-      var options = new RequestOptions();
-      var search = new URLSearchParams();
-      search.set("id", artistId);
-      search.set("entity", 'album');
-      options.search = search;
-      this.http.get(this.artistBaseApi, options).toPromise().then(
+    const promise = new Promise((resolve, reject) => {
+      const params = new HttpParams().set('id', artistId).set('entity', 'album');
+      this.httpCall.get(this.artistBaseApi, {params}).toPromise().then(
         res => {
-          this.results = res.json().results;
-          resolve(this.results);
+          const results = res['results'];
+          resolve(results);
         },
         err => {
           reject(err);
@@ -95,18 +87,14 @@ export class SearchService {
     return promise;
   }
 
-  //artist track list
+  // artist track list
   artistTrackList(artistId) {
-    var promise = new Promise((resolve, reject) => {
-      var options = new RequestOptions();
-      var search = new URLSearchParams();
-      search.set("id", artistId);
-      search.set("entity", 'song');
-      options.search = search;
-      this.http.get(this.artistBaseApi, options).toPromise().then(
+    const promise = new Promise((resolve, reject) => {
+      const params = new HttpParams().set('id', artistId).set('entity', 'song');
+      this.httpCall.get(this.artistBaseApi, {params}).toPromise().then(
         res => {
-          this.results = res.json().results;
-          resolve(this.results);
+          const results = res['results'];
+          resolve(results);
         },
         err => {
           reject(err);
@@ -115,5 +103,5 @@ export class SearchService {
     });
     return promise;
   }
- 
+
 }

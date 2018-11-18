@@ -9,17 +9,17 @@ describe('Component Login with service', () => {
         service = new AuthService();
         loginComp = new LoginComponent(service);
     });
-    afterEach(() =>{
+    afterEach(() => {
         localStorage.removeItem('token');
         service = null;
         loginComp = null;
     });
     it('Session Exists to be False', () => {
-        //spy is a feature we can controle retun value of a function what should be return value
-        //fix return value of spy then this function will return always set value
+        // spy is a feature we can controle retun value of a function what should be return value
+        // fix return value of spy then this function will return always set value
         spy = spyOn(service, 'isAuthenticated').and.returnValue(false);
         expect(loginComp.sessionExists()).toBeFalsy();
-        //when u call loginComp.sessionExists() in calls service.isAuthenticated method in component 
+        // when u call loginComp.sessionExists() in calls service.isAuthenticated method in component
         expect(service.isAuthenticated).toHaveBeenCalled();
     });
     it('Session Exists to be True', () => {

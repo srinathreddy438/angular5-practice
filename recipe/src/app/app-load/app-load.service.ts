@@ -24,7 +24,6 @@ export class AppLoadService {
 
   getSettings(): Promise<any> {
     console.log(`getSettings:: before http.get call`);
-    
     const promise = this.httpClient.get('http://private-1ad25-initializeng.apiary-mock.com/settings')
       .toPromise()
       .then(settings => {

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'app-observable-with-async',
   templateUrl: './observable-with-async.component.html',
-  styleUrls: ['./observable-with-async.component.css']
+  styleUrls: ['./observable-with-async.component.scss']
 })
 export class ObservableWithAsyncComponent implements OnInit {
   observableRes;
@@ -15,6 +15,6 @@ export class ObservableWithAsyncComponent implements OnInit {
   }
 
   getObservableData() {
-    return Observable.interval(1000).take(5).map(v => v*v);
+    return Observable.interval(1000).take(5).map(v => v * v);
   }
 }

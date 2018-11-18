@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 @Component({
-    "selector": "app-login",
-    "template": `<a>
+    'selector': 'app-login',
+    'template': `<a>
         <span>Login</span>
         <span>Logout</span>
     </a>`

@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-artist-track-list',
   templateUrl: './artist-track-list.component.html',
-  styleUrls: ['./artist-track-list.component.css']
+  styleUrls: ['./artist-track-list.component.scss']
 })
 export class ArtistTrackListComponent implements OnInit {
   loading;

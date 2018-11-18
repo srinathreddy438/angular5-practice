@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'app-async-with-observable',
   templateUrl: './async-with-observable.component.html',
-  styleUrls: ['./async-with-observable.component.css']
+  styleUrls: ['./async-with-observable.component.scss']
 })
 export class AsyncWithObservableComponent implements OnInit {
   countCompleted: boolean;
@@ -13,7 +13,7 @@ export class AsyncWithObservableComponent implements OnInit {
   message: string;
   constructor() {
     this.countDown = 5;
-    this.message = "Happy birthday!"
+    this.message = 'Happy birthday!';
     this.countCompleted = false;
 
     this.count$ = Observable
