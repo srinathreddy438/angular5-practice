@@ -19,6 +19,14 @@ import { ObservableWithAsyncComponent } from './observable-with-async/observable
       }
     ])
   ],
-  declarations: [AppComponent, AsyncWithPromiseComponent, AsyncWithObservableComponent, PromiseWithoutAsyncComponent, PromiseWithAsyncComponent, ObservableWithoutAsyncComponent, ObservableWithAsyncComponent]
+  declarations: [
+    AppComponent,
+    AsyncWithPromiseComponent,
+    AsyncWithObservableComponent,
+    PromiseWithoutAsyncComponent,
+    PromiseWithAsyncComponent,
+    ObservableWithoutAsyncComponent,
+    ObservableWithAsyncComponent
+  ]
 })
 export class AsyncModule { }

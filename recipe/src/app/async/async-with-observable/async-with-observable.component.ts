@@ -13,7 +13,7 @@ export class AsyncWithObservableComponent implements OnInit {
   message: string;
   constructor() {
     this.countDown = 5;
-    this.message = "Happy birthday!"
+    this.message = 'Happy birthday!';
     this.countCompleted = false;
 
     this.count$ = Observable

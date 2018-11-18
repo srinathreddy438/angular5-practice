@@ -10,7 +10,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     FormsModule,
-     SharedModule, // filter module
+    SharedModule, // filter module
     RouterModule.forRoot([
       {
         path: 'grid-with-pipes',

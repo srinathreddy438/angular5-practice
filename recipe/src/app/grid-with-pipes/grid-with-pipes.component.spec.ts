@@ -8,9 +8,9 @@ describe('GridWithPipesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GridWithPipesComponent ]
+      declarations: [GridWithPipesComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

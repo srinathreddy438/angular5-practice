@@ -7,18 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsyncWithPromiseComponent implements OnInit {
 
+  promise: Promise<string>;
   constructor() { }
 
   ngOnInit() {
+    this.promise = null;
   }
-
-  promise : Promise <string> = null;
-	clickMe() {
-		this.promise = new Promise<string>((resolve, reject) => {
-			setTimeout(function () {
-				resolve("resolved");
-			},2000);
-		});
-	}
+  clickMe() {
+    this.promise = new Promise<string>((resolve, reject) => {
+      setTimeout(function () {
+        resolve('resolved');
+      }, 2000);
+    });
+  }
 
 }

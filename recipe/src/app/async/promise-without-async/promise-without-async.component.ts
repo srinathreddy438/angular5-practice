@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { resolve } from 'url';
 
 @Component({
   selector: 'app-promise-without-async',
@@ -19,7 +18,7 @@ export class PromiseWithoutAsyncComponent implements OnInit {
   getPromiseData() {
     return new Promise((resolve, reject) => {
         setTimeout(function () {
-          resolve("promise resolved");
+          resolve('promise resolved');
         }, 5000);
     });
   }

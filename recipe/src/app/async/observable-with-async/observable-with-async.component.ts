@@ -15,6 +15,6 @@ export class ObservableWithAsyncComponent implements OnInit {
   }
 
   getObservableData() {
-    return Observable.interval(1000).take(5).map(v => v*v);
+    return Observable.interval(1000).take(5).map(v => v * v);
   }
 }
