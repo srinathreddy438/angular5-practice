@@ -119,6 +119,10 @@ import { SharedModule } from './shared/shared.module';
         component: PracticeComponent
       },
       {
+        path: 'practice-module',
+        loadChildren: 'app/practice-module/practice-module#PracticeModule'
+      },
+      {
         path: '',
         component: HomeComponent
       },
