@@ -30,3 +30,11 @@
         <div>{{search.collectionName}}</div>
     </li>
 </ul>
+
+<h3>Observable - Retry</h3>
+<button mat-raised-button color="accent" (click)="testRetry()">Call API</button>
+<button *ngIf="!subscription?.closed" mat-raised-button color="accent" (click)="cancelApi()">Cancel API</button>
+<div *ngIf="loading">Loading...</div>
+<div>{{statusMessage}}</div>
+
+Subscription Closed: {{subscription?.closed}}

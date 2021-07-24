@@ -3,7 +3,9 @@ import { SearchService } from '../service/search.service';
 import { FormControl } from '@angular/forms';
 import { forkJoin } from 'rxjs/observable/forkJoin';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { ISubscription } from 'rxjs/Subscription';
 // import { of } from 'rxjs';
+// import {retry} from 'rxjs/add/operator/retry';
 @Component({
   selector: 'app-api-info',
   templateUrl: './api-info.component.html',
@@ -14,6 +16,8 @@ export class ApiInfoComponent implements OnInit, AfterViewInit {
   data: any;
   apiRoot: string;
   searchField: FormControl;
+  statusMessage: string;
+  subscription: ISubscription;
   constructor(private searchServe: SearchService, private httpCall: HttpClient) {
     console.log('constructor');
   }
@@ -104,4 +108,45 @@ export class ApiInfoComponent implements OnInit, AfterViewInit {
     });
     console.log('from ts file');
   }
+
+  testRetry() {
+    const url = `${this.apiRoot}/get1`;
+    const params = new HttpParams().set('foo', 'moo').set('limit', '25');
+    this.loading = true;
+    this.subscription = this.httpCall.get(url, {params})
+    /* .retry(3)  //call 3 times if api fails */
+    // .retryWhen((err) => err.delay(1000)) //this api call for every 1 second
+    .retryWhen((err) => {       /* retry end after 5 times */
+      return err.scan((retryCount) => {
+        retryCount++;
+        if (retryCount < 5) {
+          this.statusMessage = `Retrying Attemt... ${retryCount}`;
+          return retryCount;
+        } else {
+          throw(err); // end observable incase 5 times also api failing
+        }
+      }, 0).delay(1000);
+    })
+    .subscribe(
+      res => {
+        console.log('success');
+        this.loading = false;
+      },
+      (error) => {
+        console.log(`error: ${error.status} ${error.statusText}`);
+        this.loading = false;
+      }
+    );
+  }
+
+  cancelApi() {
+    this.loading = false;
+    this.statusMessage = 'API Request Cancelled.'
+    this.subscription.unsubscribe();
+  }
 }
+
+
+
+
+/* https://www.youtube.com/watch?v=eAz5RFsewd8 */

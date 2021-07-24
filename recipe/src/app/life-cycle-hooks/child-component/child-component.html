@@ -1,0 +1,16 @@
+Parent To Child Data: 
+{{parentToChild}}
+
+<div>Parent to Child Obj:</div>
+<span *ngIf="changesObjFromParent">{{changesObjFromParent | json}}</span>
+<div>
+    <span>Previous data:</span>
+    <span>{{changesObjFromParent?.parentToChild?.previousValue}}</span>
+</div>
+<div>
+    <span>Current data:</span>
+    <span>{{changesObjFromParent?.parentToChild?.currentValue}}</span>
+</div>
+
+<div>Ng Do Check</div>
+<div>Customer Data: {{customer?.name}}</div>

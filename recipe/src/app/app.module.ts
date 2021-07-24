@@ -38,7 +38,8 @@ import { AppLoadModule } from './app-load/app-load.module';
 import { AsyncModule } from './async/async.module';
 import { GridWithPipesModule } from './grid-with-pipes/grid-with-pipes.module';
 import { GridWithPipesWithResolveModule } from './grid-with-pipes-with-resolve/grid-with-pipes-with-resolve.module';
-
+// life cycle module
+import { LifeCycleHooksModule } from './life-cycle-hooks/life-cycle-hooks-model';
 // custom pipes
 import { SqrtPipe } from './pipes/app.sqrt';
 import { DefaultPipe } from './pipes/default-pipe/default.pipe';
@@ -106,6 +107,7 @@ import { SharedModule } from './shared/shared.module';
     AsyncModule,
     GridWithPipesModule,
     GridWithPipesWithResolveModule,
+    LifeCycleHooksModule,
     // shared module
     SharedModule,
 
